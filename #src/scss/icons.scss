@@ -1,0 +1,78 @@
+@font-face {
+	font-family: "icons";
+	font-display: swap;
+	src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2#icons") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-f:before { content: "\EA01"; }
+._icon-feather_edit:before { content: "\EA02"; }
+
+._icon-close:before {
+  content: "\e90a";
+  color: #339;
+}
+._icon-marker:before {
+  content: "\e90b";
+  color: #0c9;
+}
+._icon-facebook:before {
+  content: "\e900";
+  color: #339;
+}
+._icon-hand:before {
+  content: "\e901";
+  color: #009;
+}
+._icon-in:before {
+  content: "\e902";
+  color: #339;
+}
+._icon-instagram:before {
+  content: "\e903";
+  color: #339;
+}
+._icon-megaphone:before {
+  content: "\e904";
+  color: #009;
+}
+._icon-optimize:before {
+  content: "\e905";
+  color: #339;
+}
+._icon-rating:before {
+  content: "\e906";
+  color: #339;
+}
+._icon-smile:before {
+  content: "\e907";
+  color: #009;
+}
+._icon-star:before {
+  content: "\e908";
+  color: #339;
+}
+._icon-wide:before {
+  content: "\e909";
+  color: #339;
+}

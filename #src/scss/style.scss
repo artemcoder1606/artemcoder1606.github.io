@@ -1,0 +1,573 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto&display=swap');
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: URWReg, sans-serif;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$textColor: #333399;
+$titleColor: #000099;
+$greenColor: #00CC99;
+$minWidth: 320px;
+$maxWidth: 1440;
+$maxWidthContainer: 1070;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+html, body {
+	height: 100%;
+}
+body {
+	color: $textColor;
+	font-size: 27 / 18;
+	line-height: 150%;
+	font-family: $fontFamily;
+	&._lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $maxWidthContainer + px;
+	width: 100%;
+
+}
+.page {
+	&__information {
+		padding-top: 204px;
+		padding-bottom: 255px;
+		@include adaptiv-value ('padding-top', 204, 80, 1);
+		@include adaptiv-value ('padding-bottom', 255, 80, 1);
+		@media (max-width: $md3 + px) {
+			padding-bottom: 0;
+		}
+		display: flex;
+		flex-direction: column;
+	}
+	&__benefits {
+		@include adaptiv-value ('padding-top', 190, 40, 1);
+		@include adaptiv-value ('padding-bottom', 130, 40, 1);
+	}
+	&__ladder {
+		@include adaptiv-value ('padding-top', 300, 40, 1);
+		@include adaptiv-value ('padding-bottom', 172, 20, 1);
+	}
+	&__steps {
+		@include adaptiv-value ('padding-top', 160, 40, 1);
+		@include adaptiv-value ('padding-bottom', 160, 40, 1);
+	}
+	&__management {
+		@include adaptiv-value ('padding-top', 160, 40, 1);
+		@include adaptiv-value ('padding-bottom', 160, 40, 1);
+		background: #F5F9FF;
+	}
+	&__promotion {
+		@include adaptiv-value ('padding-top', 160, 40, 1);
+		@include adaptiv-value ('padding-bottom', 160, 40, 1);
+	}
+	&__tariffs {
+		@include adaptiv-value ('padding-top', 160, 40, 1);
+		@include adaptiv-value ('padding-bottom', 160, 40, 1);
+		@media (max-width: $md3 + px) {
+			padding-top: 0;
+		}
+	}
+	&__question {
+		@include adaptiv-value ('padding-bottom', 120, 40, 1);
+	}
+}
+
+// ================================================================
+
+.information {
+	position: relative;
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: $md3+px) {
+			text-align: center;
+		}
+
+	}
+	&__img {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		@media (max-width: $md2+px) {
+			display: none;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+	&__text {
+		font-size: 24px;
+		line-height: calc(36 / 24);
+		@media (max-width: $md3+px) {
+			text-align: center;
+		}
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+
+	}
+	&__button {
+		@media (max-width: $md3+px) {
+			width: 100%;
+		}
+
+	}
+	
+
+}
+
+// ============================================================
+
+.benefits {
+	&__title {
+		@include adaptiv-value ('margin-bottom', 120, 30, 1);
+		text-align: center;
+
+	}
+	&__item {
+		&::before {
+			margin-bottom: 28px;
+			font-size: 35px;
+		}
+		@media (max-width: $md3 + px) {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+// ================================================================
+
+.ladder {
+	background: url('../img/ladder/bg.png') bottom no-repeat;
+	position: relative;
+	&__row {
+		@media(max-width: 1180px) {
+			justify-content: flex-end;
+			text-align: right;
+		}
+	}
+	&__title {
+		@media (max-width: $md2+px) {
+			text-align: center;
+		}
+	}
+	&__img {
+		position: absolute;
+		left: 0;
+		bottom: 71px;
+		@media(max-width: $md2 + px) {
+			display: none;
+		}
+		img {
+			max-width: 100%;
+		}
+
+	}
+
+}
+
+// ==================================================================
+
+.steps {
+	&__container {
+		flex-direction: column;
+	}
+	&__title {
+		display: flex;
+		justify-content: center;
+		@media (max-width: $md3 + px) {
+			text-align: center;
+		}
+
+		
+		&:not(:last-child) {
+			margin-bottom: 120px;	
+			@media (max-width: $md3 + px) {
+				text-align: center;
+				margin-bottom: 50px;
+			}
+		}
+
+	}
+	&__button {
+		align-self: center;;
+
+	}
+
+
+}
+
+.items-steps {
+	@media (max-width: $md3+px) {
+		text-align: center;
+	}
+
+	&__unit {
+		padding-bottom: 80px;
+		position: relative;
+		margin-bottom: 0;
+		@media (max-width: $md3 + px) {
+			padding-bottom: 30px;
+		}
+		&:last-child {
+			padding-bottom: 120px;
+			@media (max-width: $md3 + px) {
+				padding-bottom: 50px;
+			}
+		}
+		&:not(:last-child) {
+			&::before {
+				content: '';
+				position: absolute;
+				width: 8px;
+				height: 100%;
+				top: 0;
+				background: #F5F9FF;
+				left: -63px;
+			}
+			
+		}
+		@media (max-width: $md3+px) {
+			&::before {
+				display: none;
+			}
+		}
+
+	}
+	&__name {
+		font-size: 24px;
+		font-family: URWBold;
+		margin-bottom: 16px;
+		position: relative;
+		&::before {
+			content: '01';
+			position: absolute;
+			left: -103px;
+			font-size: 58px;
+			font-family: URWHeavy;
+			color: $greenColor;
+			z-index: 1;
+			background: #fff;
+			padding-bottom: 33px;
+			@media (max-width: $md3+px) {
+				position: static;
+				padding: 0;
+				background: none;
+				display: block;
+				margin-bottom: 30px;
+			}
+		}
+		&_two {
+			&::before {
+				content: '02';
+				padding-top: 33px;
+				top: -35px;
+			}
+		}
+		&_last {
+			&::before {
+				content: '03';
+				padding-top: 33px;
+				top: -35px;
+			}
+		}
+
+	}
+	&__text {
+		max-width: 649px;
+		@media (max-width: $md3+px) {
+			max-width: none;
+		}
+	}
+
+
+}
+
+// ========================================================
+
+.items-management {
+	background: #F5F9FF;
+	&__item {
+		box-sizing: border-box;
+		@media (max-width: $md3 + px) {
+			margin-bottom: 30px;
+		}
+	}
+	&__text {
+		max-width: 270px;
+		@media (max-width: $md3 + px) {
+			max-width: none;
+		}
+	}
+	&__content {
+		padding: 40px;
+		@include adaptiv-value ('padding', 40, 20, 1);
+		background: #fff;
+		border: 1px solid rgba(51, 51, 153, 0.1);
+		border-radius: 15px;
+
+	}
+	&__name {
+		color: $titleColor;
+		font-family: URWBold;
+		margin-bottom: 8px;
+		&::before {
+			margin-bottom: 20px;
+			font-size: 35px;
+		}
+	}
+}
+
+// ============================================
+.promotion {
+	&__row {
+		@media (max-width: $md3 + px) {
+			flex-direction: column;
+		}
+		
+	}
+	&__name {
+		font-size: 24px;
+		color: $titleColor;
+		font-family: URWBold;
+		margin-bottom: 16px;
+	}
+	&__text {
+		max-width: 395px;
+		@media (max-width: $md3 + px) {
+			max-width: none;
+		}
+	}
+	&__body {
+		justify-content: flex-end;
+		@media (max-width: $md3 + px) {
+			order: -1;
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+		&_middle {
+			margin-bottom: -30px;
+		}
+	}
+	&__img {
+		@media (max-width: $md3 + px) {
+			text-align: center;
+
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+.tariffs {
+	&__row {
+		@media (min-width: 991px) {
+			padding: 0 50px;
+		}
+	}
+	&__title {
+		max-width: 870px;
+		margin: 0 auto;
+	}
+	&__item {
+		padding: 60px;
+		border: 1px solid rgba(51, 51, 153, 0.2);
+		border-radius: 23px;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 32px;
+		@media (min-width: 768px) {
+			&:not(:last-child) {
+				@include adaptiv-value ('margin-right', 80, 40, 1);
+			}
+
+		}
+	}
+	&__name {
+		font-family: URWBold;
+		font-size: 40px;
+		line-height: calc(60 / 40);
+		color: $titleColor;
+		text-align: center;
+		margin-bottom: 32px;
+		
+	}
+	&__value {
+		font-size: 67px;
+		font-family: URWBlack;
+		color: $greenColor;
+		margin-bottom: 84px;
+		text-align: center;
+		&::after {
+			content: '';
+			display: block;
+			width: 240px;
+			height: 1px;
+			margin: 32px auto 0 auto;
+			background: $greenColor;
+		}
+
+		span {
+			font-size: 30px;
+			font-family: $fontFamily;
+			color: $textColor;
+			&:before {
+				content: '/';
+			}
+		}
+
+	}
+	&__paragraph {
+		align-items: center;
+		&::before {
+			margin-right: 11px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+
+		&_disabled {
+			color: rgba(51, 51, 153, 0.2);
+			&::before {
+				color: rgba(51, 51, 153, 0.2);
+			}
+		}
+	}
+	&__button {
+		margin-top: 68px;
+	}
+	&__warning {
+		@media (min-width: 768px) {
+			padding-left: 50px;
+		}
+		@media (max-width: 767px) {
+			margin-left: 10px;
+		}
+	}
+}
+
+// ==================================================
+.question {
+	&__title {
+		@include adaptiv-value ('margin-bottom', 120, 50, 1);
+	}
+	&__item {
+		margin-bottom: 40px;	
+	}
+	&__img {
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: $md2 + px) {
+			display: none;
+		}
+	}
+	label {
+		color: $titleColor;
+		margin-bottom: 16px;
+		display: inline-block;
+	}
+	&__input {
+		border: 1px solid rgba(51, 51, 153, 0.2);
+		border-radius: 12px;
+		padding: 0 16px;
+		color: rgba(51, 51, 153, 0.2);
+		margin-bottom: 40px;	
+		height: 67px;
+		display: block;
+		@media (min-width: $md2 + px) {
+			max-width: 440px;
+		}
+		&:focus {
+			box-shadow: 0 0 5px lighten(#000, 80%);
+		}
+
+		
+	}
+	&__button {
+		margin-top: 64px;
+		margin-bottom: 16px;
+		@media (max-width: 991px) {
+			width: 100%;
+			margin-top: 10px;
+		}
+	}
+	&__warning {
+		a  {
+			color: $greenColor;
+			display: block;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+	}
+
+}
+
+
+
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import "header";
+@import "footer";
+@import "bootstrap-grid";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+
+
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================

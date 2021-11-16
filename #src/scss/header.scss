@@ -1,0 +1,179 @@
+//====================================================================================================
+.header {
+	&._scroll {
+		.header__wrapper {
+			background: rgba(#fff, .9);
+			box-shadow: 0 0 5px lighten(#ccc, 10%);
+			@media (any-hover: hover) {
+				&:hover {
+					background: rgba(#fff, 1);
+
+				}
+			}
+
+
+		}
+		.header__row {
+			min-height: 80px;
+			@media (max-width: $md3+px) {
+				min-height: 50px;
+				
+			}
+		}
+		.menu__link {
+			// color: #fff;
+		}
+	}
+	&__wrapper {
+		transition: all .3s;
+		position: fixed;
+		width: 100%;
+		z-index: 50;
+		min-height: 50px;
+	}
+	&__row {
+		min-height: 132px;
+		@media (max-width: $md3+px) {
+			min-height: 80px;
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				width: 150vw;
+				height: 100%;
+				top: 0;
+				left: -30vw;
+				background: #fff;
+			}
+		}
+	}
+	&__logo {
+		position: relative;
+		z-index: 5;
+	}
+	
+}
+.menu {
+	@media (max-width: $md3+px) {
+		position: fixed !important;
+		width: 100vw !important;
+		height: 100%;
+		top: 0;
+		left: 0;
+		transform: translateY(-150%);
+		transition: all .3s;
+		background: $greenColor;
+		padding: 120px 20px 20px 20px;
+		overflow: auto;
+
+		&._active  {
+			transform: translateY(0);
+		}
+	}
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+	}
+	// .menu__list
+	&__list {
+		justify-content: flex-end;
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+			align-items: center;
+		}
+		li {
+			&:not(:last-child) {
+				@include adaptiv-value ('margin-right', 60, 5, 1);
+				@media (max-width: $md3+px) {
+					margin-right: 0;
+					margin-bottom: 30px;
+
+				}
+			}
+
+		}
+	}
+	// .menu__link
+	&__link {
+		font-size: 18px;
+		color:  $textColor;
+		position: relative;
+		@media(max-width: $md2 + px) {
+			font-size: 16px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 30px;
+			color: #fff;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 1px;
+			bottom: 0;
+			right: 0;
+			background: $textColor;
+			transition: all .3s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::after {
+					width: 100%;
+					left: 0;
+				}
+			}
+		}
+		&._active {
+		}
+	}
+}
+.icon-menu {
+}
+
+//====================================================================================================
+
+
+//Burger
+.icon-menu {
+	display: none;
+	@media (max-width: $md3+px) {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span {
+			transition: all 0.3s ease 0s;
+			top: calc(50% - 1px);
+			right: 15px;
+			position: absolute;
+			width: 30px;
+			height: 2px;
+			background-color: #000;
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+		}
+	}
+}
+

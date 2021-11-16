@@ -1,0 +1,94 @@
+.footer{
+	background: #F5F9FF;
+	&__logo {
+		@media (max-width: 767px) {
+			margin-bottom: 20px;
+		}
+	}
+	&__row {
+		margin-bottom: 120px;
+		@media (max-width: 767px) {
+			margin-bottom: 40px;
+		}
+	}
+	&__content {
+		@include adaptiv-value ('padding-top', 160, 20, 1);
+		@include adaptiv-value ('padding-bottom', 60, 20, 1);
+	}
+	&__inner {
+		@media (min-width: 767px) {
+			justify-content: flex-end;
+		}
+
+	}
+
+	&__item {
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	&__nav {
+		@media (max-width: 767px) {
+			margin-bottom: 20px;
+		}
+		a {
+			display: block;
+		}
+		}&__actions {
+			@media (max-width: 767px) {
+				margin-bottom: 20px;
+			}
+			a {
+				display: block;
+			}
+		}
+		&__list, &__actions {
+			li {
+				margin-bottom: 16px;
+			}
+		}
+		&__link, &__action {
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+
+				}
+				&::after {
+					display: none;
+				}
+			}
+		}
+		&__link {
+			@media (max-width: $md3 + px) {
+				color: $textColor;
+				font-size: 18px;
+			}
+		}
+	}
+
+	.socials {
+		@media (min-width: 767px) {
+			justify-content: flex-end;
+		}
+
+		&__item {
+			transition: all .3s;
+			@media (any-hover: hover) {
+				&:hover {
+					opacity: .7;
+
+				}
+			}
+			&:not(:last-child) {
+				margin-right: 25px;
+				display: inline-block;
+			}
+
+		}
+	}
+//====================================================================================================
+
+//====================================================================================================
+
