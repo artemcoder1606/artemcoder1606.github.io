@@ -312,16 +312,18 @@ body._lock {
   height: 0;
   padding-bottom: 10%;
   padding-bottom: 49%;
-  margin-left: -148px;
   margin-top: -425px;
+  left: -107px;
 }
 
 .information__img img {
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 100%;
   top: 0;
   left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .information__text {
@@ -3794,6 +3796,21 @@ html {
     -ms-flex-item-align: stretch !important;
         -ms-grid-row-align: stretch !important;
         align-self: stretch !important;
+  }
+}
+
+@media (min-width: 2500px) {
+  .information__img img {
+    width: 80%;
+    margin-top: -100px;
+  }
+}
+
+@media (max-width: 1920px) {
+  .information__img img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 
