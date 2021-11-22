@@ -226,7 +226,7 @@ body {
 
 body {
   color: #333399;
-  font-size: 27/18;
+  font-size: 18px;
   line-height: 150%;
   font-family: URWReg, sans-serif;
 }
@@ -254,10 +254,7 @@ body._lock {
 }
 
 .page__information {
-  padding-top: 204px;
-  padding-bottom: 255px;
-  padding-top: 204px;
-  padding-bottom: 255px;
+  padding-top: 185px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,7 +270,7 @@ body._lock {
 }
 
 .page__ladder {
-  padding-top: 300px;
+  padding-top: 427px;
   padding-bottom: 172px;
 }
 
@@ -283,8 +280,8 @@ body._lock {
 }
 
 .page__management {
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 168px;
+  padding-bottom: 177px;
   background: #F5F9FF;
 }
 
@@ -294,7 +291,7 @@ body._lock {
 }
 
 .page__tariffs {
-  padding-top: 160px;
+  padding-top: 103px;
   padding-bottom: 160px;
 }
 
@@ -311,13 +308,20 @@ body._lock {
 }
 
 .information__img {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  position: relative;
+  height: 0;
+  padding-bottom: 10%;
+  padding-bottom: 49%;
+  margin-left: -148px;
+  margin-top: -425px;
 }
 
 .information__img img {
-  max-width: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .information__text {
@@ -334,9 +338,13 @@ body._lock {
   text-align: center;
 }
 
+.benefits__item {
+  font-size: 18px;
+}
+
 .benefits__item::before {
   margin-bottom: 28px;
-  font-size: 35px;
+  font-size: 55px;
 }
 
 ._no-webp .ladder{
@@ -373,7 +381,7 @@ body._lock {
 }
 
 .steps__title:not(:last-child) {
-  margin-bottom: 120px;
+  margin-bottom: 141px;
 }
 
 .steps__button {
@@ -407,6 +415,7 @@ body._lock {
   font-family: URWBold;
   margin-bottom: 16px;
   position: relative;
+  margin-bottom: 21px;
 }
 
 .items-steps__name::before {
@@ -462,11 +471,16 @@ body._lock {
   color: #000099;
   font-family: URWBold;
   margin-bottom: 8px;
+  font-size: 23px;
 }
 
 .items-management__name::before {
   margin-bottom: 20px;
-  font-size: 35px;
+  font-size: 48px;
+}
+
+.promotion__row__subtitle {
+  margin-bottom: 106px;
 }
 
 .promotion__name {
@@ -490,6 +504,15 @@ body._lock {
   margin-bottom: -30px;
 }
 
+.promotion__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .promotion__img img {
   max-width: 100%;
 }
@@ -497,6 +520,10 @@ body._lock {
 .tariffs__title {
   max-width: 870px;
   margin: 0 auto;
+}
+
+.tariffs__subtitle {
+  margin-bottom: 143px;
 }
 
 .tariffs__item {
@@ -1129,7 +1156,7 @@ ol.counter li:before {
   max-width: 480px;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 120px;
+  margin-bottom: 90px;
 }
 
 [class*=__button] {
@@ -2388,10 +2415,6 @@ html {
 }
 
 @media (min-width: 768px) {
-  .tariffs__row {
-    padding: 0 50px;
-  }
-
   .tariffs__item:not(:last-child) {
     margin-right: 80px;
   }
@@ -2846,6 +2869,12 @@ html {
     -ms-flex-item-align: stretch !important;
         -ms-grid-row-align: stretch !important;
         align-self: stretch !important;
+  }
+}
+
+@media (min-width: 991px) {
+  .tariffs__row {
+    padding: 0 50px;
   }
 }
 
@@ -3779,11 +3808,7 @@ html {
 
 @media (max-width: 1070px) {
   .page__information {
-    padding-top: calc(80px + 124 * ((100vw - 320px) / 750));
-  }
-
-  .page__information {
-    padding-bottom: calc(80px + 175 * ((100vw - 320px) / 750));
+    padding-top: calc(80px + 105 * ((100vw - 320px) / 750));
   }
 
   .page__benefits {
@@ -3795,7 +3820,7 @@ html {
   }
 
   .page__ladder {
-    padding-top: calc(40px + 260 * ((100vw - 320px) / 750));
+    padding-top: calc(40px + 387 * ((100vw - 320px) / 750));
   }
 
   .page__ladder {
@@ -3811,11 +3836,11 @@ html {
   }
 
   .page__management {
-    padding-top: calc(40px + 120 * ((100vw - 320px) / 750));
+    padding-top: calc(40px + 128 * ((100vw - 320px) / 750));
   }
 
   .page__management {
-    padding-bottom: calc(40px + 120 * ((100vw - 320px) / 750));
+    padding-bottom: calc(40px + 137 * ((100vw - 320px) / 750));
   }
 
   .page__promotion {
@@ -3827,7 +3852,7 @@ html {
   }
 
   .page__tariffs {
-    padding-top: calc(40px + 120 * ((100vw - 320px) / 750));
+    padding-top: calc(40px + 63 * ((100vw - 320px) / 750));
   }
 
   .page__tariffs {
@@ -3844,6 +3869,14 @@ html {
 
   .items-management__content {
     padding: calc(20px + 20 * ((100vw - 320px) / 750));
+  }
+
+  .promotion__row__subtitle {
+    margin-bottom: calc(40px + 66 * ((100vw - 320px) / 750));
+  }
+
+  .tariffs__subtitle {
+    margin-bottom: calc(40px + 103 * ((100vw - 320px) / 750));
   }
 
   .question__title {
@@ -4000,6 +4033,7 @@ html {
 
   .promotion__img {
     text-align: center;
+    display: block;
   }
 
   [class*=__subtitle] {
@@ -4125,6 +4159,10 @@ html {
 }
 
 @media (max-width: 767px) {
+  .tariffs__warning {
+    margin-left: 10px;
+  }
+
   .footer__logo {
     margin-bottom: 20px;
   }
