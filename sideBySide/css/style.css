@@ -481,7 +481,7 @@ body._lock {
   font-size: 48px;
 }
 
-.promotion__row__subtitle {
+.promotion__subtitle {
   margin-bottom: 106px;
 }
 
@@ -517,6 +517,10 @@ body._lock {
 
 .promotion__img img {
   max-width: 100%;
+}
+
+.promotion__img_middle {
+  margin-top: -65px;
 }
 
 .tariffs__title {
@@ -3814,6 +3818,12 @@ html {
   }
 }
 
+@media (max-width: 1366px) {
+  .ladder__title {
+    padding-left: 50px !important;
+  }
+}
+
 @media (max-width: 1180px) {
   .ladder__row {
     -webkit-box-pack: end;
@@ -3888,7 +3898,7 @@ html {
     padding: calc(20px + 20 * ((100vw - 320px) / 750));
   }
 
-  .promotion__row__subtitle {
+  .promotion__subtitle {
     margin-bottom: calc(40px + 66 * ((100vw - 320px) / 750));
   }
 
@@ -3921,13 +3931,30 @@ html {
   }
 }
 
+@media (max-width: 992px) {
+  .promotion__row_one {
+    margin-bottom: 20px !important;
+  }
+}
+
 @media (max-width: 991.98px) {
   .information__img {
     display: none;
   }
 
+  .benefits__item::before {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .benefits__item {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
   .ladder__title {
     text-align: center;
+    padding-left: 0 !important;
   }
 
   .ladder__img {
@@ -3958,6 +3985,12 @@ html {
   }
 }
 
+@media (max-width: 768px) {
+  .tariffs__row {
+    margin: 0 !important;
+  }
+}
+
 @media (max-width: 767.98px) {
   .page__information {
     padding-bottom: 0;
@@ -3979,11 +4012,6 @@ html {
     width: 100%;
   }
 
-  .benefits__item {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
   .steps__title {
     text-align: center;
   }
@@ -3991,6 +4019,10 @@ html {
   .steps__title:not(:last-child) {
     text-align: center;
     margin-bottom: 50px;
+  }
+
+  .steps__button {
+    width: 100%;
   }
 
   .items-steps {
@@ -4040,6 +4072,10 @@ html {
     max-width: none;
   }
 
+  .promotion__text_one {
+    margin-bottom: 80px;
+  }
+
   .promotion__body {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
@@ -4051,6 +4087,10 @@ html {
   .promotion__img {
     text-align: center;
     display: block;
+  }
+
+  .tariffs__button {
+    width: 100%;
   }
 
   [class*=__subtitle] {
