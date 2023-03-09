@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Квартиры</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230309155940">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__wrapper" data-lp>
+				<div class="header__container">
+					<div class="header__logo-wrap">
+						<a href="#" class="header__logo"><img src="img/logo.svg" alt="logotip"></a>
+					</div>
+					<span class="header__location _icon-location">Новосибирск</span>
+					<div class="header__actions actions">
+						<div class="actions__inner" data-da=".menu, 992, first">
+							<div class="actions__body">
+								<a href="mailto:fake@mail.ru" class="_icon-mail actions__mail" aria-label="Электронная почта"></a>
+								<a href="tel:+74954191518" class="actions__phone _icon-phone ">+7 495 000-00-00</a>
+							</div>
+							<button type="button" class="button actions__button" data-popup="#callback">Заказать звонок</button>
+						</div>
+						<div class="header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item"><a href="#" class="menu__link">О проекте</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Инфраструктура</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Квартиры</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Документы</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Условия продаж</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Ход строительства</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">О застройщике</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<div class="header__button-wrap"><button type="button" class="menu__icon icon-menu"><span></span></button></div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__chose-apartment chose-apartment">
+				<div class="chose-apartment__container">
+					<h1 class="form-step__title title">Квартиры</h1>
+					<nav class="chose-apartment__breadcrumbs breadcrumbs">
+						<ul class="breadcrumbs__list">
+							<li><a href="#" class="breadcrumbs__item">Главная</a></li>
+							<li>-</li>
+							<li><span class="breadcrumbs__item">Квартиры</span></li>
+						</ul>
+					</nav>
+					<div class="chose-apartment__tabs">
+						<nav class="tabs__navigation chose-apartment__tabs apartment-tabs__navigation">
+							<div class="apartment-tabs__trigger">
+								<button type="button" class="_active apartment-tabs__title" data-tab-val='1'>
+									Выбор секции
+								</button>
+								<div class="apartment-tabs__hidden apartment-tabs__hidden_show">
+									<select name="form[]" class="form">
+										<option value="1" selected>Секция 1</option>
+										<option value="2">Секция 2</option>
+										<option value="3">Секция 3</option>
+										<option value="4">Секция 4</option>
+									</select>
+								</div>
+							</div>
+							<div class="apartment-tabs__trigger">
+								<button type="button" class="apartment-tabs__title" data-block="1" data-tab-val='2'>Выбор этажа
+								</button>
+								<div class="apartment-tabs__hidden" data-tab='1'>
+									<select name="form[]" class="form">
+										<option value="1" selected>Этаж 1</option>
+										<option value="2">Этаж 2</option>
+										<option value="3">Этаж 3</option>
+										<option value="4">Этаж 4</option>
+										<option value="5">Этаж 5</option>
+										<option value="6">Этаж 6</option>
+										<option value="7">Этаж 7</option>
+										<option value="8">Этаж 8</option>
+										<option value="9">Этаж 9</option>
+									</select>
+								</div>
+							</div>
+							<div class="apartment-tabs__trigger">
+								<button type="button" class="apartment-tabs__title" data-block="2" data-tab-val='3'>Выбор квартиры на
+									этаже
+								</button>
+								<div class="apartment-tabs__hidden" data-tab='2'>
+									<div class="options">
+										<div class="options__name">
+											Комнаты
+										</div>
+										<div class="options__item">
+											<input hidden id="o_1" class="options__input" checked type="radio" value="1" name="option">
+											<label for="o_1" class="options__label"><span class="options__text">1</span></label>
+										</div>
+										<div class="options__item">
+											<input hidden id="o_2" class="options__input" type="radio" value="2" name="option">
+											<label for="o_2" class="options__label"><span class="options__text">2</span></label>
+										</div>
+										<div class="options__item">
+											<input hidden id="o_3" class="options__input" type="radio" value="2" name="option">
+											<label for="o_3" class="options__label"><span class="options__text">3</span></label>
+										</div>
+										<div class="options__item">
+											<input hidden id="o_4" class="options__input" type="radio" value="2" name="option">
+											<label for="o_4" class="options__label"><span class="options__text">4</span></label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="apartment-tabs__trigger">
+								<button type="button" class="apartment-tabs__title" data-block="3" data-tab-val='4'>Подбор квартиры
+								</button>
+								<div class="apartment-tabs__hidden" data-tab="3">
+									<div class="apartment-tabs__range">
+										<div class="apartment-tabs__range-title">
+											Площадь, кв.м.
+										</div>
+										<div class="apartment-tabs__range-wrap">
+											<div id="range-square" class="range"></div>
+										</div>
+									</div>
+									<div class="apartment-tabs__range">
+										<div class="apartment-tabs__range-title">
+											Стоимость, тыс.р.
+										</div>
+										<div class="apartment-tabs__range-wrap">
+											<div id="range-price" class="range"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</nav>
+						<div class="apartment-tabs__content">
+							<div class="apartment-tabs__body _active" data-parent="1">
+								<div class="apartment-tabs__img-ibg">
+									<picture><source srcset="img/apartments/01.webp" type="image/webp"><img src="img/apartments/01.jpg" alt="Изображение многоэтажного дома"></picture>
+								</div>
+							</div>
+							<div class="apartment-tabs__body" data-parent="2">
+								<div class="apartment-tabs__img-ibg">
+									<picture><source srcset="img/apartments/02.webp" type="image/webp"><img src="img/apartments/02.jpg" alt="Изображение многоэтажного дома"></picture>
+								</div>
+							</div>
+							<div class="apartment-tabs__body" data-parent="3">
+								<div class="apartment-tabs__img-ibg">
+									<picture><source srcset="img/apartments/03.webp" type="image/webp"><img src="img/apartments/03.jpg" alt="Изображение схемы квартиры"></picture>
+								</div>
+							</div>
+							<div class="apartment-tabs__body" data-parent="4">
+								<div class="apartment-tabs__item item-tabs">
+									<div class="item-tabs__img-ibg item-tabs__img-ibg_small">
+										<picture><source srcset="img/apartments/04.webp" type="image/webp"><img src="img/apartments/04.jpg" alt="Схема квартиры"></picture>
+									</div>
+									<div class="item-tabs__table">
+										<table>
+											<tr>
+												<td>Количество комнат</td>
+												<td class="item-tabs__column item-tabs__column_center">2</td>
+											</tr>
+											<tr>
+												<td>Площадь</td>
+												<td class="item-tabs__column item-tabs__column_center"><span>72 кв.м</span></td>
+											</tr>
+											<tr>
+												<td>Этаж</td>
+												<td class="item-tabs__column item-tabs__column_center">4</td>
+											</tr>
+											<tr>
+												<td>Секция</td>
+												<td class="item-tabs__column item-tabs__column_center">1</td>
+											</tr>
+											<tr>
+												<td>Стоимость</td>
+												<td class="item-tabs__column item-tabs__column_center"><span>7 500 000 р</span></td>
+											</tr>
+										</table>
+									</div>
+									<div class="item-tabs__links">
+										<a href="#" class="link">
+											<span class="_icon-arrow">Узнать больше</span>
+										</a>
+										<a href="#" class="link link_yellow">
+											<span class="_icon-arrow">Рассчитать ипотеку</span>
+										</a>
+									</div>
+								</div>
+								<div class="apartment-tabs__item item-tabs">
+									<div class="item-tabs__img-ibg item-tabs__img-ibg_small">
+										<picture><source srcset="img/apartments/04.webp" type="image/webp"><img src="img/apartments/04.jpg" alt="Схема квартиры"></picture>
+									</div>
+									<div class="item-tabs__table">
+										<table>
+											<tr>
+												<td>Количество комнат</td>
+												<td class="item-tabs__column item-tabs__column_center">2</td>
+											</tr>
+											<tr>
+												<td>Площадь</td>
+												<td class="item-tabs__column item-tabs__column_center"><span>72 кв.м</span></td>
+											</tr>
+											<tr>
+												<td>Этаж</td>
+												<td class="item-tabs__column item-tabs__column_center">4</td>
+											</tr>
+											<tr>
+												<td>Секция</td>
+												<td class="item-tabs__column item-tabs__column_center">1</td>
+											</tr>
+											<tr>
+												<td>Стоимость</td>
+												<td class="item-tabs__column item-tabs__column_center"><span>7 500 000 р</span></td>
+											</tr>
+										</table>
+									</div>
+									<div class="item-tabs__links">
+										<a href="#" class="link">
+											<span class="_icon-arrow">Узнать больше</span>
+										</a>
+										<a href="#" class="link link_yellow">
+											<span class="_icon-arrow">Рассчитать ипотеку</span>
+										</a>
+									</div>
+								</div>
+								<div class="apartment-tabs__item item-tabs">
+									<div class="item-tabs__img-ibg item-tabs__img-ibg_small">
+										<picture><source srcset="img/apartments/04.webp" type="image/webp"><img src="img/apartments/04.jpg" alt="Схема квартиры"></picture>
+									</div>
+									<div class="item-tabs__table">
+										<table>
+											<tr>
+												<td>Количество комнат</td>
+												<td class="item-tabs__column item-tabs__column_center">2</td>
+											</tr>
+											<tr>
+												<td>Площадь</td>
+												<td class="item-tabs__column item-tabs__column_center"><span>72 кв.м</span></td>
+											</tr>
+											<tr>
+												<td>Этаж</td>
+												<td class="item-tabs__column item-tabs__column_center">4</td>
+											</tr>
+											<tr>
+												<td>Секция</td>
+												<td class="item-tabs__column item-tabs__column_center">1</td>
+											</tr>
+											<tr>
+												<td>Стоимость</td>
+												<td class="item-tabs__column item-tabs__column_center"><span>7 500 000 р</span>
+												<td>
+											</tr>
+										</table>
+									</div>
+									<div class="item-tabs__links">
+										<a href="#" class="link">
+											<span class="_icon-arrow">Узнать больше</span>
+										</a>
+										<a href="#" class="link link_yellow">
+											<span class="_icon-arrow">Рассчитать ипотеку</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- questions -->
+			<section class="page__questions questions">
+				<div class="questions__container">
+					<h2 class="questions__title title">
+						Будем рады ответить
+						на все ваши вопросы
+					</h2>
+					<div class="questions__form-wrap">
+						<form class="questions__form form-questions">
+							<h3 class="form-questions__title">
+								Заполните форму и наш менеджер
+								свяжется с вами в ближаейшее время
+							</h3>
+							<div class="form-questions__body">
+								<div class="form-questions__input">
+									<label hidden for="name"></label>
+									<input autocomplete="off" type="text" name="form[]" data-required data-error="Заполните это поле" placeholder="Имя" id="name" class="input">
+								</div>
+								<div class="form-questions__input">
+									<label hidden for="email"></label>
+									<input autocomplete="off" type="text" name="form[]" data-required data-error="Заполните это поле" placeholder="Email / Телефон" id="email" class="input">
+								</div>
+								<button type="submit" class="form-questions__link link">
+									<span class="_icon-arrow">Отправить</span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__unit"><a href="" class="footer__logo"><img src="img/logo-white.svg" alt="Logo"></a></div>
+				<div class="footer__menu menu-footer" data-da=".footer__unit, 767.98">
+					<nav class="menu-footer__body">
+						<ul class="menu-footer__list">
+							<li class="menu-footer__item"><a href="" class="menu-footer__link">О проекте</a></li>
+							<li class="menu-footer__item"><a href="" class="menu-footer__link">Инфраструктура
+								</a></li>
+							<li class="menu-footer__item"><a href="" class="menu-footer__link">Квартиры</a></li>
+							<li class="menu-footer__item"><a href="" class="menu-footer__link">Документы</a></li>
+						</ul>
+						<ul class="menu-footer__list">
+							<li class="menu-footer__item"><a href="" class="menu-footer__link">Условия продаж</a></li>
+							<li class="menu-footer__item"><a href="" class="menu-footer__link">Ход строительства</a></li>
+							<li class="menu-footer__item"><a href="" class="menu-footer__link">Контакты</a></li>
+							<li class="menu-footer__item"><a href="" class="menu-footer__link">О застройщике</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="footer__actions actions" data-da=".footer__unit, 991.98, last">
+					<div class="actions__inner actions__inner_white">
+						<div class="actions__body actions__body_white">
+							<a href="mailto:fake@mail.ru" class="_icon-mail actions__mail actions__mail_white" aria-label="Электронная почта"></a>
+							<a href="tel:+74954191518" class="actions__phone actions__phone_white _icon-phone ">+7 495 000-00-00</a>
+						</div>
+						<button type="button" class="button actions__button actions__button_white" data-popup="#callback">Заказать звонок</button>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://api-maps.yandex.ru/3.0/?apikey=c9dcc103-076c-49b7-934f-aee79b1758c3&lang=ru_RU&_v=20230309155940"></script>
+
+	</div>
+	<div id="callback" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрыть</button>
+				<div class="popup__text">
+					Тут будет форма
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_ru&apikey=c9dcc103-076c-49b7-934f-aee79b1758c3&_v=20230309155940" type="text/javascript">
+	</script>
+	<script src="js/app.min.js?_v=20230309155940"></script>
+</body>
+
+</html>
