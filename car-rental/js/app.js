@@ -4095,13 +4095,14 @@
           modules: [le, de, ce, me],
           effect: "fade",
           fadeEffect: { crossFade: !0 },
-          autoplay: { delay: 5e3, disableOnInteraction: !1 },
+          autoplay: { delay: 3e3, disableOnInteraction: !1 },
           observer: !0,
           observeParents: !0,
           slidesPerView: 1,
           spaceBetween: 0,
           autoHeight: !1,
           speed: 800,
+          touchRatio: 0,
           pagination: { el: ".slider-quality__pagging", clickable: !0 },
           breakpoints: {
             320: { slidesPerView: 1, spaceBetween: 0, autoHeight: !0 },
@@ -4111,24 +4112,34 @@
         }),
       document.querySelector(".reviews__slider") &&
         new re(".reviews__slider", {
-          modules: [le, de],
-          effect: "fade",
-          fadeEffect: { crossFade: !0 },
-          autoplay: { delay: 5e3, disableOnInteraction: !1 },
+          modules: [le, de, ce],
           observer: !0,
           observeParents: !0,
           slidesPerView: 4,
           spaceBetween: 35,
           autoHeight: !1,
           speed: 800,
+          touchRatio: 1,
+          simulateTouch: !0,
+          loop: !0,
           pagination: { el: ".reviews__slider-dots", clickable: !0 },
+          autoplay: { delay: 5e3, disableOnInteraction: !1 },
           breakpoints: {
-            320: { slidesPerView: 1, spaceBetween: 0 },
+            320: { slidesPerView: 1, spaceBetween: 10 },
             480: { slidesPerView: 2, spaceBetween: 20, autoHeight: !1 },
             768: { slidesPerView: 3, spaceBetween: 20, autoHeight: !1 },
             992: { slidesPerView: 4, spaceBetween: 35, autoHeight: !1 },
           },
-          on: {},
+          on: {
+            init() {
+              this.el.addEventListener("mouseenter", () => {
+                this.autoplay.stop();
+              }),
+                this.el.addEventListener("mouseleave", () => {
+                  this.autoplay.start();
+                });
+            },
+          },
         });
   });
   let he = !1;
