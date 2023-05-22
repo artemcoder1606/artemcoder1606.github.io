@@ -379,11 +379,11 @@
               valueSub: "value-sub",
             },
             D = { tooltips: ".__tooltips", aria: ".__aria" };
-          function N(e, t) {
+          function B(e, t) {
             if (!c(t)) throw new Error("noUiSlider: 'step' is not numeric.");
             e.singleStep = t;
           }
-          function B(e, t) {
+          function N(e, t) {
             if (!c(t))
               throw new Error(
                 "noUiSlider: 'keyboardPageMultiplier' is not numeric."
@@ -636,8 +636,8 @@
                 format: M,
               },
               s = {
-                step: { r: !1, t: N },
-                keyboardPageMultiplier: { r: !1, t: B },
+                step: { r: !1, t: B },
+                keyboardPageMultiplier: { r: !1, t: N },
                 keyboardMultiplier: { r: !1, t: I },
                 keyboardDefaultStep: { r: !1, t: q },
                 start: { r: !0, t: H },
@@ -711,8 +711,8 @@
               P = 0,
               M = {},
               $ = t.ownerDocument,
-              N = s.documentElement || $.documentElement,
-              B = $.body,
+              B = s.documentElement || $.documentElement,
+              N = $.body,
               I = "rtl" === $.dir || 1 === s.ort ? 0 : 100;
             function q(e, t) {
               var s = $.createElement("div");
@@ -1090,14 +1090,14 @@
             function ce(e, t) {
               t.handle && (m(t.handle, s.cssClasses.active), (P -= 1)),
                 t.listeners.forEach(function (e) {
-                  N.removeEventListener(e[0], e[1]);
+                  B.removeEventListener(e[0], e[1]);
                 }),
                 0 === P &&
                   (m(_, s.cssClasses.drag),
                   Ee(),
                   e.cursor &&
-                    ((B.style.cursor = ""),
-                    B.removeEventListener("selectstart", r))),
+                    ((N.style.cursor = ""),
+                    N.removeEventListener("selectstart", r))),
                 t.handleNumbers.forEach(function (e) {
                   be("change", e), be("set", e), be("end", e);
                 });
@@ -1111,7 +1111,7 @@
                   h(i, s.cssClasses.active)),
                   e.stopPropagation();
                 var n = [],
-                  a = se(E.move, N, le, {
+                  a = se(E.move, B, le, {
                     target: e.target,
                     handle: i,
                     connect: t.connect,
@@ -1123,14 +1123,14 @@
                     buttonsProperty: e.buttons,
                     locations: O.slice(),
                   }),
-                  o = se(E.end, N, ce, {
+                  o = se(E.end, B, ce, {
                     target: e.target,
                     handle: i,
                     listeners: n,
                     doNotReject: !0,
                     handleNumbers: t.handleNumbers,
                   }),
-                  l = se("mouseout", N, oe, {
+                  l = se("mouseout", B, oe, {
                     target: e.target,
                     handle: i,
                     listeners: n,
@@ -1139,9 +1139,9 @@
                   });
                 n.push.apply(n, a.concat(o, l)),
                   e.cursor &&
-                    ((B.style.cursor = getComputedStyle(e.target).cursor),
+                    ((N.style.cursor = getComputedStyle(e.target).cursor),
                     f.length > 1 && h(_, s.cssClasses.drag),
-                    B.addEventListener("selectstart", r, !1)),
+                    N.addEventListener("selectstart", r, !1)),
                   t.handleNumbers.forEach(function (e) {
                     be("start", e);
                   });
@@ -1461,7 +1461,7 @@
             function De() {
               return k.map($e);
             }
-            function Ne(e, t) {
+            function Be(e, t) {
               var i = Pe(),
                 r = [
                   "margin",
@@ -1491,7 +1491,7 @@
                 (O = []),
                 Le(n(e.start) ? e.start : i, t);
             }
-            function Be() {
+            function Ne() {
               (c = z(_)),
                 V(s.connect, c),
                 he(s.events),
@@ -1500,7 +1500,7 @@
                 s.tooltips && U(),
                 X();
             }
-            Be();
+            Ne();
             var Ie = {
               destroy: Me,
               steps: De,
@@ -1514,7 +1514,7 @@
                 Se(e, t, O, s);
               },
               options: o,
-              updateOptions: Ne,
+              updateOptions: Be,
               target: _,
               removePips: J,
               removeTooltips: W,
@@ -2816,12 +2816,14 @@
         let n,
           r = e - t,
           a = i,
-          o = 12 * s;
-        n = (r + (((r / 100) * a) / 12) * o) / o;
-        const l = Math.round(n);
-        if (l < 0) return !1;
-        (C.innerHTML = `${r} ₽`),
-          (E.innerHTML = `${l} ₽`),
+          o = s,
+          l = 12 * o;
+        0 != o && (n = (r + (((r / 100) * a) / 12) * l) / l);
+        const c = Math.round(n);
+        if (c < 0) return !1;
+        0 != o
+          ? ((C.innerHTML = `${r} ₽`), (E.innerHTML = `${c} ₽`))
+          : ((C.innerHTML = "0 ₽"), (E.innerHTML = "0 ₽")),
           T && (T.innerHTML = `${s} лет`),
           _ && (_.innerHTML = `${a} %`),
           (A.innerHTML = `${e} ₽`),
@@ -2860,8 +2862,8 @@
           });
       }
     const D = document.getElementById("range-square"),
-      N = document.getElementById("range-price");
-    function B(e) {
+      B = document.getElementById("range-price");
+    function N(e) {
       if (null == e) return window;
       if ("[object Window]" !== e.toString()) {
         var t = e.ownerDocument;
@@ -2870,15 +2872,15 @@
       return e;
     }
     function I(e) {
-      return e instanceof B(e).Element || e instanceof Element;
+      return e instanceof N(e).Element || e instanceof Element;
     }
     function q(e) {
-      return e instanceof B(e).HTMLElement || e instanceof HTMLElement;
+      return e instanceof N(e).HTMLElement || e instanceof HTMLElement;
     }
     function j(e) {
       return (
         "undefined" != typeof ShadowRoot &&
-        (e instanceof B(e).ShadowRoot || e instanceof ShadowRoot)
+        (e instanceof N(e).ShadowRoot || e instanceof ShadowRoot)
       );
     }
     D &&
@@ -2888,8 +2890,8 @@
         tooltips: !0,
         range: { min: 0, max: 100 },
       }),
-      N &&
-        b.create(N, {
+      B &&
+        b.create(B, {
           start: [2e3, 8e3],
           connect: !0,
           tooltips: !0,
@@ -2920,7 +2922,7 @@
       };
     }
     function F(e) {
-      var t = B(e);
+      var t = N(e);
       return { scrollLeft: t.pageXOffset, scrollTop: t.pageYOffset };
     }
     function R(e) {
@@ -2934,7 +2936,7 @@
       return G(W(e)).left + F(e).scrollLeft;
     }
     function X(e) {
-      return B(e).getComputedStyle(e);
+      return N(e).getComputedStyle(e);
     }
     function Y(e) {
       var t = X(e),
@@ -2964,7 +2966,7 @@
         (r || (!r && !s)) &&
           (("body" !== R(t) || Y(o)) &&
             (c =
-              (i = t) !== B(i) && q(i)
+              (i = t) !== N(i) && q(i)
                 ? { scrollLeft: (n = i).scrollLeft, scrollTop: n.scrollTop }
                 : F(i)),
           q(t)
@@ -3005,7 +3007,7 @@
       void 0 === t && (t = []);
       var i = J(e),
         n = i === (null == (s = e.ownerDocument) ? void 0 : s.body),
-        r = B(i),
+        r = N(i),
         a = n ? [r].concat(r.visualViewport || [], Y(i) ? i : []) : i,
         o = t.concat(a);
       return n ? o : o.concat(ee(Z(a)));
@@ -3017,7 +3019,7 @@
       return q(e) && "fixed" !== X(e).position ? e.offsetParent : null;
     }
     function ie(e) {
-      for (var t = B(e), s = se(e); s && te(s) && "static" === X(s).position; )
+      for (var t = N(e), s = se(e); s && te(s) && "static" === X(s).position; )
         s = se(s);
       return s &&
         ("html" === R(s) || ("body" === R(s) && "static" === X(s).position))
@@ -3280,7 +3282,7 @@
           r = void 0 === n || n,
           a = i.resize,
           o = void 0 === a || a,
-          l = B(t.elements.popper),
+          l = N(t.elements.popper),
           c = [].concat(t.scrollParents.reference, t.scrollParents.popper);
         return (
           r &&
@@ -3375,7 +3377,7 @@
           C = "clientHeight",
           E = "clientWidth";
         if (
-          (x === B(s) &&
+          (x === N(s) &&
             "static" !== X((x = W(s))).position &&
             "absolute" === o &&
             ((C = "scrollHeight"), (E = "scrollWidth")),
@@ -3542,7 +3544,7 @@
         return $e[e];
       });
     }
-    function Ne(e, t) {
+    function Be(e, t) {
       var s = t.getRootNode && t.getRootNode();
       if (e.contains(t)) return !0;
       if (s && j(s)) {
@@ -3554,7 +3556,7 @@
       }
       return !1;
     }
-    function Be(e) {
+    function Ne(e) {
       return Object.assign({}, e, {
         left: e.x,
         top: e.y,
@@ -3564,9 +3566,9 @@
     }
     function Ie(e, t) {
       return t === pe
-        ? Be(
+        ? Ne(
             (function (e) {
-              var t = B(e),
+              var t = N(e),
                 s = W(e),
                 i = t.visualViewport,
                 n = s.clientWidth,
@@ -3598,7 +3600,7 @@
               t
             );
           })(t)
-        : Be(
+        : Ne(
             (function (e) {
               var t,
                 s = W(e),
@@ -3637,7 +3639,7 @@
                       : e;
                 return I(s)
                   ? t.filter(function (e) {
-                      return I(e) && Ne(e, s) && "body" !== R(e);
+                      return I(e) && Be(e, s) && "body" !== R(e);
                     })
                   : [];
               })(e)
@@ -3697,7 +3699,7 @@
           strategy: "absolute",
           placement: n,
         }),
-        x = Be(Object.assign({}, v, S)),
+        x = Ne(Object.assign({}, v, S)),
         C = d === fe ? x : w,
         E = {
           top: y.top - C.top + m.top,
@@ -3773,8 +3775,8 @@
               M = "y" === w ? "height" : "width",
               $ = x[w],
               D = $ + g[k],
-              N = $ - g[P],
-              B = f ? -E[M] / 2 : 0,
+              B = $ - g[P],
+              N = f ? -E[M] / 2 : 0,
               I = b === de ? C[M] : E[M],
               q = b === de ? -E[M] : -C[M],
               j = t.elements.arrow,
@@ -3786,16 +3788,16 @@
               R = G[P],
               W = ze(0, C[M], z[M]),
               U = y
-                ? C[M] / 2 - B - W - F - _.mainAxis
+                ? C[M] / 2 - N - W - F - _.mainAxis
                 : I - W - F - _.mainAxis,
               X = y
-                ? -C[M] / 2 + B + W + R + _.mainAxis
+                ? -C[M] / 2 + N + W + R + _.mainAxis
                 : q + W + R + _.mainAxis,
               Y = t.elements.arrow && ie(t.elements.arrow),
               K = Y ? ("y" === w ? Y.clientTop || 0 : Y.clientLeft || 0) : 0,
               Z = null != (O = null == A ? void 0 : A[w]) ? O : 0,
               J = $ + X - Z,
-              ee = ze(f ? V(D, $ + U - Z - K) : D, $, f ? H(N, J) : N);
+              ee = ze(f ? V(D, $ + U - Z - K) : D, $, f ? H(B, J) : B);
             (x[w] = ee), (L[w] = ee - $);
           }
           if (o) {
@@ -3878,7 +3880,7 @@
           i = void 0 === s ? "[data-popper-arrow]" : s;
         null != i &&
           ("string" != typeof i || (i = t.elements.popper.querySelector(i))) &&
-          Ne(t.elements.popper, i) &&
+          Be(t.elements.popper, i) &&
           (t.elements.arrow = i);
       },
       requires: ["popperOffsets"],
@@ -4096,7 +4098,7 @@
                 }
                 if (C)
                   for (
-                    var N = function (e) {
+                    var B = function (e) {
                         var t = y.find(function (t) {
                           var s = x.get(t);
                           if (s)
@@ -4106,11 +4108,11 @@
                         });
                         if (t) return (E = t), "break";
                       },
-                      B = h ? 3 : 1;
-                    B > 0;
-                    B--
+                      N = h ? 3 : 1;
+                    N > 0;
+                    N--
                   ) {
-                    if ("break" === N(B)) break;
+                    if ("break" === B(N)) break;
                   }
                 t.placement !== E &&
                   ((t.modifiersData[i]._skip = !0),
@@ -4468,8 +4470,8 @@
       );
     }
     Dt.$$tippy = !0;
-    var Nt = 1,
-      Bt = [],
+    var Bt = 1,
+      Nt = [],
       It = [];
     function qt(e, t) {
       var s,
@@ -4487,7 +4489,7 @@
         h = !1,
         m = [],
         g = it(U, d.interactiveDebounce),
-        v = Nt++,
+        v = Bt++,
         b = (c = d.plugins).filter(function (e, t) {
           return c.indexOf(e) === t;
         }),
@@ -4517,13 +4519,13 @@
             (y.props = i),
               F(),
               s.interactiveDebounce !== i.interactiveDebounce &&
-                (B(), (g = it(U, i.interactiveDebounce)));
+                (N(), (g = it(U, i.interactiveDebounce)));
             s.triggerTarget && !i.triggerTarget
               ? nt(s.triggerTarget).forEach(function (e) {
                   e.removeAttribute("aria-expanded");
                 })
               : i.triggerTarget && e.removeAttribute("aria-expanded");
-            N(), M(), x && x(s, i);
+            B(), M(), x && x(s, i);
             y.popperInstance &&
               (Q(),
               J().forEach(function (e) {
@@ -4567,7 +4569,7 @@
                   ht([s, i], n), mt([s, i], "visible");
                 }
                 D(),
-                  N(),
+                  B(),
                   rt(It, y),
                   null == (e = y.popperInstance) || e.forceUpdate(),
                   $("onMount", [y]),
@@ -4605,14 +4607,14 @@
               (h = !1),
               (u = !1),
               A() && (S.style.visibility = "hidden");
-            if ((B(), V(), M(!0), A())) {
+            if ((N(), V(), M(!0), A())) {
               var n = k(),
                 r = n.box,
                 a = n.content;
               y.props.animation && (ht([r, a], i), mt([r, a], "hidden"));
             }
             D(),
-              N(),
+              B(),
               y.props.animation
                 ? A() &&
                   (function (e, t) {
@@ -4627,7 +4629,7 @@
           },
           hideWithInteractivity: function (e) {
             0;
-            O().addEventListener("mousemove", g), rt(Bt, g), g(e);
+            O().addEventListener("mousemove", g), rt(Nt, g), g(e);
           },
           enable: function () {
             y.state.isEnabled = !0;
@@ -4676,7 +4678,7 @@
         E = e.hasAttribute("aria-expanded");
       return (
         F(),
-        N(),
+        B(),
         M(),
         $("onCreate", [y]),
         d.showOnCreate && ee(),
@@ -4746,7 +4748,7 @@
           });
         }
       }
-      function N() {
+      function B() {
         !E &&
           y.props.aria.expanded &&
           nt(y.props.triggerTarget || e).forEach(function (e) {
@@ -4758,9 +4760,9 @@
               : e.removeAttribute("aria-expanded");
           });
       }
-      function B() {
+      function N() {
         O().removeEventListener("mousemove", g),
-          (Bt = Bt.filter(function (e) {
+          (Nt = Nt.filter(function (e) {
             return e !== g;
           }));
       }
@@ -4860,10 +4862,10 @@
           var i = "focus" === (null == (t = r) ? void 0 : t.type);
           (r = e),
             (l = e.currentTarget),
-            N(),
+            B(),
             !y.state.isVisible &&
               ut(e) &&
-              Bt.forEach(function (t) {
+              Nt.forEach(function (t) {
                 return t(e);
               }),
             "click" === e.type &&
@@ -4914,7 +4916,7 @@
                 m = s - t.right - u > r;
               return p || f || h || m;
             });
-          })(i, e) && (B(), te(e));
+          })(i, e) && (N(), te(e));
         }
       }
       function X(e) {
@@ -7736,7 +7738,7 @@
       runCallbacksOnInit: !0,
       _emitClasses: !1,
     };
-    function Ns(e, t) {
+    function Bs(e, t) {
       return function (s) {
         void 0 === s && (s = {});
         const i = Object.keys(s)[0],
@@ -7756,7 +7758,7 @@
           : rs(t, s);
       };
     }
-    const Bs = {
+    const Ns = {
         eventsEmitter: hs,
         update: ms,
         translate: gs,
@@ -7873,7 +7875,7 @@
         r.modules.forEach((e) => {
           e({
             swiper: r,
-            extendParams: Ns(t, a),
+            extendParams: Bs(t, a),
             on: r.on.bind(r),
             once: r.once.bind(r),
             off: r.off.bind(r),
@@ -8245,9 +8247,9 @@
           : (qs.installModule(e), qs);
       }
     }
-    Object.keys(Bs).forEach((e) => {
-      Object.keys(Bs[e]).forEach((t) => {
-        qs.prototype[t] = Bs[e][t];
+    Object.keys(Ns).forEach((e) => {
+      Object.keys(Ns[e]).forEach((t) => {
+        qs.prototype[t] = Ns[e][t];
       });
     }),
       qs.use([
@@ -10291,50 +10293,54 @@
         }
       })(),
       ymaps.ready(function () {
-        var e = new ymaps.Map("map", {
-          controls: [],
-          center: [56.09484420632457, 92.9239537993164],
-          zoom: 15,
-        });
-        let t = new ymaps.Placemark(
-          [56.09484420632457, 92.9239537993164],
-          {},
-          {
-            hasBalloon: !1,
-            hideIconOnBalloonOpen: !1,
-            iconLayout: "default#imageWithContent",
-            iconImageHref: "img/icons/marker-map.svg",
-            iconImageSize: [40, 40],
-            iconImageOffset: [-20, -20],
-            iconContentOffset: [0, 0],
-          }
-        );
-        e.geoObjects.add(t),
-          e.behaviors.disable("scrollZoom"),
-          e.behaviors.disable("drag");
+        if (document.getElementById("map")) {
+          var e = new ymaps.Map("map", {
+            controls: [],
+            center: [56.09484420632457, 92.9239537993164],
+            zoom: 15,
+          });
+          let t = new ymaps.Placemark(
+            [56.09484420632457, 92.9239537993164],
+            {},
+            {
+              hasBalloon: !1,
+              hideIconOnBalloonOpen: !1,
+              iconLayout: "default#imageWithContent",
+              iconImageHref: "img/icons/marker-map.svg",
+              iconImageSize: [40, 40],
+              iconImageOffset: [-20, -20],
+              iconContentOffset: [0, 0],
+            }
+          );
+          e.geoObjects.add(t),
+            e.behaviors.disable("scrollZoom"),
+            e.behaviors.disable("drag");
+        }
       }),
       ymaps.ready(function () {
-        var e = new ymaps.Map("map1", {
-          controls: [],
-          center: [56.09484420632457, 92.9239537993164],
-          zoom: 15,
-        });
-        let t = new ymaps.Placemark(
-          [56.09484420632457, 92.9239537993164],
-          {},
-          {
-            hasBalloon: !1,
-            hideIconOnBalloonOpen: !1,
-            iconLayout: "default#imageWithContent",
-            iconImageHref: "img/icons/marker-map.svg",
-            iconImageSize: [40, 40],
-            iconImageOffset: [-20, -20],
-            iconContentOffset: [0, 0],
-          }
-        );
-        e.geoObjects.add(t),
-          e.behaviors.disable("scrollZoom"),
-          e.behaviors.disable("drag");
+        if (document.getElementById("map1")) {
+          var e = new ymaps.Map("map1", {
+            controls: [],
+            center: [56.09484420632457, 92.9239537993164],
+            zoom: 15,
+          });
+          let t = new ymaps.Placemark(
+            [56.09484420632457, 92.9239537993164],
+            {},
+            {
+              hasBalloon: !1,
+              hideIconOnBalloonOpen: !1,
+              iconLayout: "default#imageWithContent",
+              iconImageHref: "img/icons/marker-map.svg",
+              iconImageSize: [40, 40],
+              iconImageOffset: [-20, -20],
+              iconContentOffset: [0, 0],
+            }
+          );
+          e.geoObjects.add(t),
+            e.behaviors.disable("scrollZoom"),
+            e.behaviors.disable("drag");
+        }
       }),
       (function () {
         const e = document.querySelectorAll(".header-submenu__block");
