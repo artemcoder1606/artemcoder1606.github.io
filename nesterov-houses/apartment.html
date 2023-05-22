@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230522162652">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230522165307">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -347,7 +347,7 @@
 			</div>
 		</footer>
 
-		<script src="https://api-maps.yandex.ru/3.0/?apikey=c9dcc103-076c-49b7-934f-aee79b1758c3&lang=ru_RU&_v=20230522162652"></script>
+		<script src="https://api-maps.yandex.ru/3.0/?apikey=c9dcc103-076c-49b7-934f-aee79b1758c3&lang=ru_RU&_v=20230522165307"></script>
 		<script type="text/javascript">
 			// <![CDATA[
 			function print1() {
@@ -356,12 +356,13 @@
 				let img = win.document.write(
 					'<div><picture><source srcset="img/apartmentLayout1.webp" type="image/webp"><img  src="img/apartmentLayout1.jpg" style="width: 100%; object-size: contain;"></picture></div'
 				);
-				win.print();
-				win.close();
+				setTimeout(function() {
+					win.print();
+					win.close();
+				}, 250);
 			}
 			// ]]>
 		</script>
-
 
 	</div>
 	<div id="callback" aria-hidden="true" class="popup">
@@ -374,9 +375,9 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_ru&apikey=c9dcc103-076c-49b7-934f-aee79b1758c3&_v=20230522162652" type="text/javascript">
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_ru&apikey=c9dcc103-076c-49b7-934f-aee79b1758c3&_v=20230522165307" type="text/javascript">
 	</script>
-	<script src="js/app.min.js?_v=20230522162652"></script>
+	<script src="js/app.min.js?_v=20230522165307"></script>
 </body>
 
 </html>
