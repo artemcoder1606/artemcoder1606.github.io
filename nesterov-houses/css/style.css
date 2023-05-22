@@ -902,8 +902,10 @@ body.popup-show::after {
   position: relative;
   z-index: 1;
 }
-.link:hover::before {
-  left: calc(100% - 48px);
+@media (any-hover: hover) {
+  .link:hover::before {
+    left: calc(100% - 48px);
+  }
 }
 .link::before {
   content: "";
@@ -917,6 +919,7 @@ body.popup-show::after {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
+  pointer-events: none;
 }
 .link_yellow::before {
   background: #FFF9EF;
@@ -4097,6 +4100,8 @@ body.popup-show::after {
   top: 0;
   right: 0;
   height: 1.625rem;
+  width: 3.125rem;
+  left: auto;
 }
 @media (max-width: 61.99875em) {
   .our-projects__controls {
@@ -5327,11 +5332,24 @@ body.popup-show::after {
 
 .range-slider .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
   cursor: pointer;
-  z-index: 3;
+  z-index: 9999;
   position: relative;
+  background: #FF9900;
+  border-radius: 50%;
+}
+
+.range-slider .slider::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  z-index: 9999;
+  position: relative;
+  background: #FF9900;
+  border-radius: 50%;
+  border: none;
 }
 
 .range-slider .slider-thumb {
@@ -5339,11 +5357,11 @@ body.popup-show::after {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background: #FF9900;
+  background: transparent;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: -1;
 }
 
 .range-slider .tooltip {
@@ -5355,6 +5373,7 @@ body.popup-show::after {
   transform: translate(-50%, -50%);
   display: flex;
   gap: 0.1875rem;
+  font-weight: 400;
 }
 @media (max-width: 106.25em) {
   .range-slider .tooltip.end {

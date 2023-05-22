@@ -902,8 +902,10 @@ body.popup-show::after {
   position: relative;
   z-index: 1;
 }
-.link:hover::before {
-  left: calc(100% - 48px);
+@media (any-hover: hover) {
+  .link:hover::before {
+    left: calc(100% - 48px);
+  }
 }
 .link::before {
   content: "";
@@ -917,6 +919,7 @@ body.popup-show::after {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
+  pointer-events: none;
 }
 .link_yellow::before {
   background: #FFF9EF;
