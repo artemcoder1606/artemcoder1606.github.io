@@ -1675,6 +1675,7 @@ textarea.input {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-left: 0.125rem;
   max-width: 25.6875rem;
+  outline: none;
   margin-bottom: 1.125rem;
 }
 .form-questions__input::placeholder {
