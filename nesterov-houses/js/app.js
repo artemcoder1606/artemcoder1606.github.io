@@ -2833,32 +2833,32 @@
       },
       M = document.querySelectorAll(".range-slider .slider");
     if (0 !== M.length) {
-      for (let Xs of M)
-        Xs.addEventListener("input", () => {
+      for (let Ys of M)
+        Ys.addEventListener("input", () => {
           P(y.value, S.value, w.value, x.value);
         });
       P();
     }
     const $ = document.querySelectorAll(".range-slider");
     if (0 !== $.length)
-      for (let Ys = 0; Ys < $.length; Ys++) {
-        const Ks = $[Ys].querySelector(".slider"),
-          Qs = $[Ys].querySelector(".slider-thumb"),
-          Zs = $[Ys].querySelector(".tooltip"),
-          Js = $[Ys].querySelector(".tooltip").innerHTML;
-        function ei() {
-          const e = Ks.getAttribute("max"),
-            t = (Ks.value / e) * 100 + "%";
-          (Zs.innerHTML = Ks.value + Js),
-            (Qs.style.left = t),
-            t > "95" || Ks.value === e
-              ? Zs.classList.add("end")
-              : Zs.classList.remove("end"),
+      for (let Ks = 0; Ks < $.length; Ks++) {
+        const Qs = $[Ks].querySelector(".slider"),
+          Zs = $[Ks].querySelector(".slider-thumb"),
+          Js = $[Ks].querySelector(".tooltip"),
+          ei = $[Ks].querySelector(".tooltip").innerHTML;
+        function ti() {
+          const e = Qs.getAttribute("max"),
+            t = (Qs.value / e) * 100 + "%";
+          (Js.innerHTML = Qs.value + ei),
+            (Zs.style.left = t),
+            t > "95" || Qs.value === e
+              ? Js.classList.add("end")
+              : Js.classList.remove("end"),
             console.log("window.innerWidth", window.innerWidth);
         }
-        ei(),
-          Ks.addEventListener("input", () => {
-            ei(), P(y.value, S.value, w.value, x.value);
+        ti(),
+          Qs.addEventListener("input", () => {
+            ti(), P(y.value, S.value, w.value, x.value);
           });
       }
     const D = document.getElementById("range-square"),
@@ -10285,6 +10285,35 @@
         )(2);
       });
     let Us = document.querySelectorAll("[data-gallery]");
+    async function Xs(e, t, s) {
+      const i = await fetch("img/documents.json", { method: "GET" });
+      if (i.ok) {
+        !(function (e, t, s) {
+          const i = document.querySelector(t);
+          e.documents &&
+            e.documents.forEach((e) => {
+              const t = e.id,
+                n = e.url,
+                r = e.title,
+                a = e.date;
+              let o = "";
+              (o += '<div class="item-documents__inner">'),
+                (o += `<div class="item-documents__img">\n\t\t  <img src="img/icons/${e.image}" alt="">\n\t  </div>`),
+                (o += `<h3 class="item-documents__title">\n\t  ${r}\n  </h3>`),
+                (o += "</div>");
+              let l = "";
+              (l += `<a href="${n}" data-pid="${t}" class="documents__item item-documents">`),
+                (l += o),
+                (l += `<time class="item-documents__date" datetime="2021-06-24">${a}</time>`),
+                (l +=
+                  '<span class="item-documents__download" download>\n\t\t<img src="img/icons/download.svg" alt="Иконка скачать">\n\t\tСкачать\n\t</span>'),
+                (l += "</a>"),
+                i.insertAdjacentHTML(s, l);
+            });
+        })(await i.json(), t, s),
+          e.remove();
+      } else alert("Error");
+    }
     Us &&
       (function () {
         for (let e = 0; e < Us.length; e++) {
@@ -10411,6 +10440,13 @@
             });
         }
       }),
+      (function (e, t, s) {
+        document.querySelector(t) &&
+          document.querySelector(t).addEventListener("click", function (i) {
+            i.preventDefault();
+            Xs(i.target.closest(t), e, s);
+          });
+      })(".documents__body", ".documents__show-more", "beforeEnd"),
       (window.FLS = !0),
       (function (e) {
         let t = new Image();
